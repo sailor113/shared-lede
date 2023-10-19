@@ -134,9 +134,6 @@ jobs:
           mv $DOT_CONFIG .config
           make defconfig
 
-      - name: 下载编译资源
-        run: |
-          make download -j8 || make download -j1 V=s
 
 
       - name: 整理固件目录
@@ -145,7 +142,7 @@ jobs:
           rm -rf $(find bin/targets/ -type d -name 'packages')
           cp $(find bin/targets/ -type f) collected_firmware
           cp $(find bin/packages/ -type f -name '*.ipk') collected_firmware/packages
-          cp $(find target/linux/ramips/dts -name 'mt7621_xiaomi_mi-router-4a*.dtsi' collected_firmware 
+          cp $(find target/linux/ramips/dts -name 'mt7621_xiaomi_mi-router-4a*.dtsi') collected_firmware 
           cd collected_firmware
           zip -r allfiles.zip *
           cd packages
