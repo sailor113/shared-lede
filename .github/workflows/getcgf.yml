@@ -7,7 +7,7 @@
 #
 # 源码采用openwrt openwrt-23.05分支
 #
-name: 固件编译 openwrt 23.05
+name: getcfg
 
 on:
   workflow_dispatch:
